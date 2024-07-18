@@ -13,9 +13,9 @@ export async function createTodo(formData) {
   redirect("/todo");
 }
 
-export async function updateTodo(formData) {
+export async function updateTodo(id,formData) {
   const title = formData.get("title");
-  const id = +formData.get("id");
+//   const id = +formData.get("id");
   if (!title) {
     throw new Error("title is required");
   }
