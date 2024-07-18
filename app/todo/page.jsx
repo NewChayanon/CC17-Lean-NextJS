@@ -11,11 +11,15 @@ export default async function Page({ searchParams }) {
       {/* CC */}
       <Search />
       <div>
-        <Link href="/todo/create" className="px-3 bg-blue-200 py-1.5">create todo</Link>
+        <Link href="/todo/create" className="px-3 bg-blue-200 py-1.5">
+          create todo
+        </Link>
       </div>
       <ul>
         {todos.map((todo) => (
-          <li key={todo.id}>{todo.title}</li>
+          <li key={todo.id}>
+            <Link href={`/todo/${todo.id}/edit`}>{todo.title}</Link>
+          </li>
         ))}
       </ul>
     </div>

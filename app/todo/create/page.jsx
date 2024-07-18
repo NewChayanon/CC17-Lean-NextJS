@@ -1,3 +1,5 @@
+import { createTodo } from "../_lib/action";
+
 export default function Page() {
   return (
     <form action={createTodo}>
@@ -5,9 +7,4 @@ export default function Page() {
       <button>Create Todo</button>
     </form>
   );
-}
-
-async function createTodo(formData) {
-  "use server";
-  console.log(formData.get("title"));
 }
