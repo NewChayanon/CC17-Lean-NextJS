@@ -19,7 +19,7 @@ export async function updateTodo(formData) {
   if (!title) {
     throw new Error("title is required");
   }
-  await prisma.todo.update({ where: { id }, data: { title } });
+  await prisma.todo.update({ where: { id}, data: { title } });
 
   redirect("/todo");
 }
