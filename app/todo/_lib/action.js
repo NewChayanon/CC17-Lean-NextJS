@@ -13,13 +13,13 @@ export async function createTodo(formData) {
   redirect("/todo");
 }
 
-export async function updateTodo(id,formData) {
+export async function updateTodo(id, formData) {
   const title = formData.get("title");
-//   const id = +formData.get("id");
+
   if (!title) {
     throw new Error("title is required");
   }
-  await prisma.todo.update({ where: { id}, data: { title } });
+  await prisma.todo.update({ where: { id }, data: { title } });
 
   redirect("/todo");
 }
